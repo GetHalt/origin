@@ -60,9 +60,10 @@ a {
 	display: block;
 	float: right;
 	position: absolute;
-	right: 0;
+	right: 20px;
 	@include rem('font-size', 15px);
 }
+
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
@@ -122,6 +123,44 @@ a {
 
 	.main-navigation ul {
 		display: none;
+	}
+}
+
+.nav-menu {
+	@extend %cf;
+}
+
+.main-navigation {
+	@include media(max-width $grid-breakpoint+1) {
+		width: 100%;
+		position: static;
+		text-align: center;
+		@include transform(none);
+		@include rem('padding-top', 30px);
+		.menu-toggle {
+			display: block;
+			text-align: right;
+			color: white;
+			font-size: 14px;
+			text-transform: uppercase;
+			font-weight: 500;
+			letter-spacing: 1px;
+			position: absolute;
+			top: 15px;
+			right: 20px;
+		}
+		.nav-menu {
+			display: none;
+		}
+		&.toggled .nav-menu {
+			display: block;
+		}
+		li {
+			display: block;
+			float: none;
+			margin-left: 0;
+			margin-bottom: 5px;
+		}
 	}
 }
 
