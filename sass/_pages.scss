@@ -25,3 +25,17 @@
 		@include rem('margin-top', 30px);
 	}
 }
+
+.article-list {
+	li {
+		@include rem('margin-bottom', 5px);	
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+.article-category-title {
+	font-weight: 600;
+	@include rem('margin-bottom', 20px);
+}
