@@ -33,4 +33,29 @@
 			}
 		} );
 	} );
+	// Primary color.
+	wp.customize( 'accent', function( value ) {
+		value.bind( function( to ) {
+			$( 'a' ).css( 'color', to );
+			$('.site-header, .site-footer, .full-wrap').css( 'background-color', to );
+		} );
+	} );
+	// Primary color.
+	wp.customize( 'logo', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-branding' ).find('img').attr( 'src', to );
+		} );
+	} );
+	// Search Header
+	wp.customize( 'search_header', function( value ) {
+		value.bind( function( to ) {
+			$('.search-header').text( to );
+		} );
+	} );
+	// Search Subheader
+	wp.customize( 'search_subheader', function( value ) {
+		value.bind( function( to ) {
+			$('.search-subheader').text( to );
+		} );
+	} );
 } )( jQuery );
