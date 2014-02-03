@@ -4,35 +4,64 @@
 	@include box-sizing(border-box);
 }
 
+html {
+	font-size: 100%;
+}
+
 body {
-	font-family: "Open Sans";
+	font-family: 'Helvetica Neue', 'helvetica neue', helvetica, arial, 'lucida grande', sans-serif;
+	font-weight: 300;
 
 	/* Better font rendering */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-// a {
-// 	color: $link;
-// 	&:visited {
-// 		color: lighten($link, 10%);
-// 	}
+.inside {
+	@extend %inside;
+}
 
-// 	&:hover,
-// 	&:focus,
-// 	&:active {
-// 		color: lighten($link, 40%);
-// 	}
-// }
+a {
+	text-decoration: none;
+}
+
+
+/* =Header
+----------------------------------------------- */
+.site-header {
+	border-bottom: 1px solid #454952;
+	@include rem('padding-top', 25px);
+	@include rem('padding-bottom', 25px);
+
+	.inside {
+		@extend %cf;
+		position: relative;
+	}
+	a {
+		color: #fff;
+	}
+
+	h1 {
+		// font-weight: 300;
+		@include rem('font-size', 25px);
+	}
+}
+
+.site-branding {
+	float: left;
+}
 
 /* =Menu
 ----------------------------------------------- */
 
 .main-navigation {
+	@extend %vertical-align;
 	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
+	float: right;
+	position: absolute;
+	right: 0;
+	@include rem('font-size', 15px);
 }
 .main-navigation ul {
 	list-style: none;
@@ -42,6 +71,7 @@ body {
 .main-navigation li {
 	float: left;
 	position: relative;
+	@include rem('margin-left', 20px);
 }
 .main-navigation a {
 	display: block;
@@ -98,7 +128,14 @@ body {
 
 /* =Content
 ----------------------------------------------- */
-
+.full-wrap {
+	color: #fff;
+}
+.content-area {
+	@extend %inside;
+	@include rem('padding-top', 50px);
+	@include rem('padding-bottom', 50px);
+}
 .sticky {
 }
 .hentry {
@@ -122,7 +159,6 @@ body {
 	margin: 0 0 1.5em;
 }
 
-
 /* =Asides
 ----------------------------------------------- */
 
@@ -130,7 +166,6 @@ body {
 .archive .format-aside .entry-title {
 	display: none;
 }
-
 
 /* =Media
 ----------------------------------------------- */
@@ -184,7 +219,6 @@ object {
 	max-width: 100%;
 }
 
-
 /* =Navigation
 ----------------------------------------------- */
 
@@ -214,4 +248,15 @@ object {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+/* =Footer
+---------------------------------------------- */
+.site-footer {
+	color: white;
+	@include rem('padding', 15px 0);
+	@include rem('font-size', 13px);
+	a {
+		color: lighten(white, 10%);
+	}
 }

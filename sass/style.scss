@@ -3,7 +3,7 @@ Theme Name: Origin
 Theme URI: http://underscores.me/
 Author: Ram Ratan Maurya
 Author URI: http://mauryaratan.me
-Description: A basic starter theme for Halt, a custom service platform built on WordPress.
+Description: A basic starter theme for Halt, a customer service platform built on WordPress.
 Version: 1.0
 License: GNU General Public License
 License URI: license.txt
@@ -27,4 +27,5 @@ and Blueprint http://www.blueprintcss.org/
 @import "reset";
 @import "elements";
 @import "scaffolding";
+@import "pages";
 @import "sidebar";

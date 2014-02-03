@@ -3,7 +3,7 @@ Theme Name: Origin
 Theme URI: http://underscores.me/
 Author: Ram Ratan Maurya
 Author URI: http://mauryaratan.me
-Description: A basic starter theme for Halt, a custom service platform built on WordPress.
+Description: A basic starter theme for Halt, a customer service platform built on WordPress.
 Version: 1.0
 License: GNU General Public License
 License URI: license.txt
@@ -21,6 +21,35 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
+.inside, .content-area {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.site-header .inside {
+  zoom: 1;
+}
+.site-header .inside:before, .site-header .inside:after {
+  display: table;
+  content: "";
+}
+.site-header .inside:after {
+  clear: both;
+}
+
+.main-navigation {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 /* =Reset
 -------------------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
@@ -127,8 +156,6 @@ select,
 textarea {
   color: #404040;
   font-family: sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
   line-height: 1.5;
 }
 
@@ -266,6 +293,7 @@ button,
 input,
 select,
 textarea {
+  font-family: inherit;
   font-size: 100%;
   /* Corrects font size not being inherited in all browsers */
   margin: 0;
@@ -274,6 +302,10 @@ textarea {
   /* Improves appearance and consistency in all browsers */
   *vertical-align: middle;
   /* Improves appearance and consistency in all browsers */
+  max-width: 100%;
+  /* Better font rendering */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
 }
 
 button,
@@ -326,10 +358,6 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* Addresses appearance set to searchfield in S5, Chrome */
-  -webkit-box-sizing: content-box;
-  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-decoration {
@@ -462,11 +490,44 @@ textarea {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
-  font-family: "Open Sans";
+  font-family: 'Helvetica Neue', 'helvetica neue', helvetica, arial, 'lucida grande', sans-serif;
+  font-weight: 300;
   /* Better font rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =Header
+----------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid #454952;
+  padding-top: 25px;
+  padding-top: 1.5625rem;
+  padding-bottom: 25px;
+  padding-bottom: 1.5625rem;
+}
+.site-header .inside {
+  position: relative;
+}
+.site-header a {
+  color: #fff;
+}
+.site-header h1 {
+  font-size: 25px;
+  font-size: 1.5625rem;
+}
+
+.site-branding {
+  float: left;
 }
 
 /* =Menu
@@ -474,8 +535,11 @@ body {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
-  width: 100%;
+  float: right;
+  position: absolute;
+  right: 0;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .main-navigation ul {
@@ -487,6 +551,8 @@ body {
 .main-navigation li {
   float: left;
   position: relative;
+  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .main-navigation a {
@@ -535,6 +601,17 @@ body {
 }
 /* =Content
 ----------------------------------------------- */
+.full-wrap {
+  color: #fff;
+}
+
+.content-area {
+  padding-top: 50px;
+  padding-top: 3.125rem;
+  padding-bottom: 50px;
+  padding-bottom: 3.125rem;
+}
+
 .hentry {
   margin: 0 0 1.5em;
 }
@@ -649,6 +726,48 @@ object {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
   display: block;
+}
+
+/* =Footer
+---------------------------------------------- */
+.site-footer {
+  color: white;
+  padding: 15px 0;
+  padding:  0.9375rem 0;
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.site-footer a {
+  color: white;
+}
+
+/* =Front Page
+----------------------------------------- */
+.search-articles {
+  text-align: center;
+  padding: 80px 0;
+  padding:  5rem 0;
+}
+.search-articles .search-header,
+.search-articles .search-subheader {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search-articles .search-header {
+  font-weight: 300;
+  font-size: 35px;
+  font-size: 2.1875rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+}
+
+.article-search-form .search-field {
+  width: 850px;
+  padding: 10px;
+  outline: 0;
+  margin-top: 30px;
+  margin-top: 1.875rem;
 }
 
 /* =Widgets
