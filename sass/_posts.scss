@@ -1,0 +1,4 @@
+.entry-title {
+	line-height: 1;
+	@include rem('font-size', 45px);
+}

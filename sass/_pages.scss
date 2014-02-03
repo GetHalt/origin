@@ -39,3 +39,12 @@
 	font-weight: 600;
 	@include rem('margin-bottom', 20px);
 }
+
+
+.single-article {
+	.site-content {
+		@extend %inside;
+		@include rem('padding-top', 80px);
+		@include rem('padding-bottom', 80px);
+	}
+}

@@ -21,7 +21,7 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
-.inside, .content-area {
+.inside, .content-area, .single-article .site-content {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
@@ -850,6 +850,12 @@ object {
   color: white;
 }
 
+.entry-title {
+  line-height: 1;
+  font-size: 45px;
+  font-size: 2.8125rem;
+}
+
 /* =Front Page
 ----------------------------------------- */
 .search-articles {
@@ -891,6 +897,13 @@ object {
   font-weight: 600;
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
+}
+
+.single-article .site-content {
+  padding-top: 80px;
+  padding-top: 5rem;
+  padding-bottom: 80px;
+  padding-bottom: 5rem;
 }
 
 /* =Widgets
