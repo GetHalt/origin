@@ -36,7 +36,7 @@
 	// Primary color.
 	wp.customize( 'accent', function( value ) {
 		value.bind( function( to ) {
-			$( 'a' ).css( 'color', to );
+			$( 'a, .article-category-title' ).css( 'color', to );
 			$('.site-header, .site-footer, .full-wrap').css( 'background-color', to );
 		} );
 	} );

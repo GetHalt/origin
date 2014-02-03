@@ -74,7 +74,7 @@ function origin_get_theme_mods( $args = array() ) {
 			'search_subheader' => array(
 				'title'   => __( 'Search Subheader Text', 'origin' ),
 				'type'    => 'text',
-				'default' => 'Need some help? Quick search our knowledgebase articles.'
+				'default' => 'Need some help? Quickly search our knowledgebase articles.'
 			),
 		)
 	);
@@ -182,7 +182,8 @@ add_action( 'customize_register', 'origin_customize_register_transport' );
 function origin_header_css() {
 	?>
 	<style id="origin-custom-css" type="text/css">
-		a {
+		a,
+		.article-category-title {
 			color: <?php echo origin_theme_mod( 'colors', 'accent' ); ?>;
 		}
 		.site-header,
