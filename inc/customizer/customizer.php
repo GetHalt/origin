@@ -40,7 +40,7 @@ add_action( 'customize_preview_init', 'origin_customize_preview_js' );
 
 /**
  * Default theme customizations.
- * 
+ *
  * @return $options an array of default theme options
  */
 function origin_get_theme_mods( $args = array() ) {
@@ -69,12 +69,12 @@ function origin_get_theme_mods( $args = array() ) {
 			'search_header' => array(
 				'title'   => __( 'Search Header Text', 'origin' ),
 				'type'    => 'text',
-				'default' => 'Help &amp; Support'
+				'default' => __( 'Help &amp; Support', 'origin' )
 			),
 			'search_subheader' => array(
 				'title'   => __( 'Search Subheader Text', 'origin' ),
 				'type'    => 'text',
-				'default' => 'Need some help? Quickly search our knowledgebase articles.'
+				'default' => __( 'Need some help? Quickly search our knowledgebase articles.', 'origin' )
 			),
 		)
 	);
@@ -103,7 +103,7 @@ function origin_get_theme_mods( $args = array() ) {
 /**
  * Register settings.
  *
- * Take the final list of theme mods, and register all the settings, 
+ * Take the final list of theme mods, and register all the settings,
  * and add all of the proper controls.
  *
  * If the type is one of the default supported ones, add it normally. Otherwise
@@ -163,7 +163,7 @@ add_action( 'customize_register', 'origin_customize_register_settings' );
 function origin_customize_register_transport( $wp_customize ) {
 	$built_in = array( 'blogname' => '', 'blogdescription' => '', 'header_textcolor' => '' );
 	$origin   = origin_get_theme_mods( array( 'keys_only' => true ) );
-	
+
 	$transport = array_merge( $built_in, $origin );
 
 	foreach ( $transport as $key => $default ) {
@@ -175,7 +175,7 @@ add_action( 'customize_register', 'origin_customize_register_transport' );
 
 /**
  * Output the basic extra CSS for primary and accent colors.
- * Split away from widget colors for brevity. 
+ * Split away from widget colors for brevity.
  *
  * @since Origin 1.0
  */
