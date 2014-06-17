@@ -73,10 +73,33 @@ function origin_widgets_init() {
 add_action( 'widgets_init', 'origin_widgets_init' );
 
 /**
+ * Register Google font for Origin.
+ *
+ * @since 1.0
+ *
+ * @return string
+ */
+function origin_font_url() {
+	$font_url = '';
+	/*
+	 * Translators: If there are characters in your language that are not supported
+	 * by Lato, translate this to 'off'. Do not translate into your own language.
+	 */
+	if ( 'off' !== _x( 'on', 'Ubuntu font: on or off', 'origin' ) ) {
+		$font_url = add_query_arg( 'family', urlencode( 'Ubuntu:300,400,700,400italic' ), "//fonts.googleapis.com/css" );
+	}
+
+	return $font_url;
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function origin_scripts() {
-	wp_enqueue_style( 'origin-style', get_stylesheet_uri() );
+	// Add Google font, used in the main stylesheet.
+	wp_enqueue_style( 'origin-google-fonts', origin_font_url(), array(), null );
+
+	wp_enqueue_style( 'origin-style', get_stylesheet_uri(), array( 'origin-google-fonts' ) );
 
 	wp_enqueue_script( 'origin-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -106,7 +129,7 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/bootstrap.php';
 
 /**
  * Load Jetpack compatibility file.

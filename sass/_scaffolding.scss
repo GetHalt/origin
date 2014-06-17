@@ -9,8 +9,7 @@ html {
 }
 
 body {
-	font-family: 'Helvetica Neue', 'helvetica neue', helvetica, arial, 'lucida grande', sans-serif;
-	font-weight: 300;
+	font-family: 'Ubuntu', 'Helvetica Neue', 'helvetica neue', helvetica, arial, 'lucida grande', sans-serif;
 
 	/* Better font rendering */
 	-webkit-font-smoothing: antialiased;
@@ -42,7 +41,6 @@ a {
 	}
 
 	h1 {
-		// font-weight: 300;
 		@include rem('font-size', 25px);
 	}
 }
