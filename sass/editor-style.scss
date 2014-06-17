@@ -1,0 +1,26 @@
+@import "compass/css3";
+@import "preboot";
+@import "elements";
+
+*,
+*:after,
+*:before {
+	@include box-sizing(border-box);
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: 'Ubuntu', 'Helvetica Neue', 'helvetica neue', helvetica, arial, 'lucida grande', sans-serif;
+	font-size: 16px;
+
+	/* Better font rendering */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: #2E3138;
+}

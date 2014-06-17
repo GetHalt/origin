@@ -53,6 +53,15 @@ function origin_setup() {
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
+
+	$editor_styles = array();
+	if ( '' !== $google_request = origin_font_url() ) {
+		$editor_styles[] = $google_request;
+	}
+
+	$editor_styles[] = 'css/editor-style.css';
+
+	add_editor_style( $editor_styles );
 }
 endif; // origin_setup
 add_action( 'after_setup_theme', 'origin_setup' );
